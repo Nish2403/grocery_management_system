@@ -17,10 +17,10 @@ public class registration extends HttpServlet {
 	String address=""+req.getParameter("address");
 	String contact=""+req.getParameter("contactNumber");
 	java_database jd=new java_database();
-	String id;
-	id = jd.insert_registration_data(fullname,email,password,address,contact);
+	String reg_id;
+	reg_id = jd.insert_registration_data(fullname,email,password,address,contact);
 	
-	req.setAttribute("id", id);
+	req.setAttribute("id", reg_id);
 	req.getRequestDispatcher("success.jsp").forward(req,res);
 	}
 
